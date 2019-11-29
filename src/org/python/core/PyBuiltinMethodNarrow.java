@@ -12,7 +12,7 @@ public abstract class PyBuiltinMethodNarrow extends PyBuiltinMethod {
      * Creates a method for the <code>name</code> that takes exactly <code>numArgs</code> arguments.
      */
     protected PyBuiltinMethodNarrow(String name, int numArgs) {
-        this(name, numArgs, numArgs);
+        this(name, numArgs-1, numArgs-1);
     }
 
     /**
