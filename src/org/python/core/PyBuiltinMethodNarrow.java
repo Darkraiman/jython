@@ -12,7 +12,7 @@ public abstract class PyBuiltinMethodNarrow extends PyBuiltinMethod {
      * Creates a method for the <code>name</code> that takes exactly <code>numArgs</code> arguments.
      */
     protected PyBuiltinMethodNarrow(String name, int numArgs) {
-        this(name, numArgs-1, numArgs-1);
+        this(name, numArgs, numArgs);
     }
 
     /**
@@ -20,7 +20,7 @@ public abstract class PyBuiltinMethodNarrow extends PyBuiltinMethod {
      * <code>maxArgs</code> arguments.
      */
     protected PyBuiltinMethodNarrow(String name, int minArgs, int maxArgs) {
-        super(null, new DefaultInfo(name, minArgs, maxArgs));
+        super(null, new DefaultInfo(name, minArgs-1, maxArgs-1));
     }
 
     protected PyBuiltinMethodNarrow(PyObject self, Info info) {
